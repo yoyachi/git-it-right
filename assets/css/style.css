@@ -57,6 +57,16 @@ body{
     color: whitesmoke;
 }
 
+.bg-red {
+    background-color: red;
+    color: whitesmoke;
+}
+
+.bg-red:hover {
+    background-color: red;
+    color: whitesmoke;
+}
+
 .gif {
     justify-content: center;
 }

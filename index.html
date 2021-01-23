@@ -31,14 +31,21 @@
         </div>
         <div class="pure-g button">
                 <div class="pure-u-1">
-                <button class="pure-button" onclick = "location.href=('./moviegame.html')">Start Game</button>
+                <button class="pure-button" onclick = "changePage()">Start Game</button>
                 <button class="pure-button" onclick = "location.href=('./highscores/highscores.html')">View Highscores</button>
             </div>
         </div>
     </div>
     <div class="pure-g gif">
     </div>
-
+    <script>
+        function changePage() {
+            var username = document.querySelector('#multi-first-name');
+            username = username.value;
+            localStorage.setItem('username', JSON.stringify(username));
+            window.location.replace('./moviegame.html');
+        }
+    </script>
 <!-- <script src="./assets/js/script.js"></script> -->
 
 </body>
