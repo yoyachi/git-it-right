@@ -29,7 +29,7 @@ var fetchFun = function(rando) {
     })
 };
 // Establish api key
-var apikey = 'http://www.omdbapi.com/?i=tt3896198&apikey=da94de50';
+var apikey = 'https://www.omdbapi.com/?i=tt3896198&apikey=da94de50';
 //
 var getMovieData = function() {
     var rando = getRandomNumber();
