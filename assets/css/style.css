@@ -23,9 +23,10 @@ body{
 }
 .container{
     margin: 7% 10%;
-    border-radius: 5%;
+    border-radius: 2%;
     background-color:rgb(87, 83, 83);
     padding: 2%;
+    border: 1px solid whitesmoke;
 }
 .pure-u-1{
     padding: 2% 2%;
@@ -34,5 +35,43 @@ body{
     margin-left:10%;
 }
 .fa{
-    padding: 2%;
+    padding: 3%;
+}
+.text-center {
+    text-align: center;
+}
+.pure-menu-item {
+    color: whitesmoke;
+}
+.pure-menu-item:hover {
+    color: black;
+}
+
+.bg-green {
+    background-color: green;
+    color: whitesmoke;
+}
+
+.bg-green:hover {
+    background-color: green;
+    color: whitesmoke;
+}
+
+.gif {
+    justify-content: center;
+}
+
+.movie-name {
+    text-decoration: underline;
+}
+
+
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+    
+    .container{
+        border-radius: 5%;
+    }
+
 }
