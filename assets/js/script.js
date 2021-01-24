@@ -35,7 +35,8 @@ if (highScoresArray == null) {
 
 // current location check
 var currentLocation = window.location.pathname;
-if (currentLocation === '/git-it-right/highscores/highscores.html') {
+console.log(currentLocation);
+if (currentLocation.includes('/highscores/highscores.html')) {
 
     if (highScoresArray[0] == null) {
         console.log('empty');
