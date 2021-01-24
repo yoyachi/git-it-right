@@ -67,6 +67,10 @@ body{
     color: whitesmoke;
 }
 
+.justify-content-center {
+    justify-content: center;
+}
+
 .gif {
     justify-content: center;
 }

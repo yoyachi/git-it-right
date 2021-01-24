@@ -36,7 +36,13 @@ if (highScoresArray == null) {
 // current location check
 var currentLocation = window.location.pathname;
 if (currentLocation === '/highscores/highscores.html') {
-    
+
+    if (highScoresArray[0] == null) {
+        console.log('empty');
+        var heading = document.querySelector('#highScoreHeading');
+        heading.textContent = 'There are no scores yet!';
+        
+    }  
 }
 
 // Get a random number to send into getMovieData
