@@ -54,7 +54,7 @@ if (currentLocation.includes('/highscores/highscores.html')) {
         for (var i = 0; i < highScoresArray.length; i++) {
             var displayScore = document.createElement("li");
                 displayScore.textContent = highScoresArray[i].username + " - " + highScoresArray[i].score;
-                displayScore.setAttribute("class", "pure-u pure-menu-item pure-menu-link");
+                displayScore.setAttribute('class', 'pure-u pure-menu-item pure-menu-link');
                 scoresList.appendChild(displayScore);
         }
     }

@@ -78,7 +78,11 @@ body{
 .movie-name {
     text-decoration: underline;
 }
+#highscores{
+    display: flex;
+    flex-direction: column;
 
+}
 
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
