@@ -25,6 +25,13 @@ if (qCount == null) {
     localStorage.setItem('qCount', qCount);
 }
 
+//high scores array
+var highScoresArray = localStorage.getItem('highscores');
+if (highScoresArray == null) {
+    highScoresArray = 0;
+    localStorage.setItem('highscores', highScoresArray);
+}
+
 
 // Get a random number to send into getMovieData
 var getRandomNumber = function() {
@@ -209,23 +216,31 @@ var displayGif = function() {
 
 var endGame = function() {
     
-    localStorage.setItem("qCount", 0)
-    window.location.replace('../highscores/highscores.html')
+    localStorage.setItem("qCount", 1)
+    highScores();
+    // window.location.replace('../highscores/highscores.html')
 }
 
 var highScores = function() {
 
+    
     var storedScore = localStorage.getItem("score")
+    var storedName = localStorage.getItem("username")
 
-    var scoreEl = document.querySelector(".info")
+    var currentScore = {username: storedName, score: storedScore};
+        highscoresArray = localStorage.getItem("highscores");
+        highScoresArray.push(currentScore);
+        localStorage.setItem("highscores", highScoresArray);
 
-     // if there are no high scores tell user and display Go Back button
-     if (!storedScore) {
-        var displayScore = document.createElement("h3");
-            displayScore.setAttribute("class", "pure-u")
-            displayScore.textContent = "No scores yet...";
-            scoreEl.appendChild(displayScore);
-    }  
+    // var scoreEl = document.querySelector(".info")
+
+    //  // if there are no high scores tell user and display Go Back button
+    //  if (!storedScore) {
+    //     var displayScore = document.createElement("h3");
+    //         displayScore.setAttribute("class", "pure-u")
+    //         displayScore.textContent = "No scores yet...";
+    //         scoreEl.appendChild(displayScore);
+    // }  
 
 }
 
