@@ -2,16 +2,27 @@
 var movieNamesObj = ['Django Unchained', 'Once upon a time... in Hollywood', 'Black Panther', 'Maze Runner', 'Deadpool', 'Crazy Rich Asians', 'A Star is Born', 'Bohemian Rhapsody', 
 'Jaws', 'Rocky', 'Back to the Future'];
 
-
+// incorrect answers
 var wrongActors = ["Tom Hanks", "Will Smith", "Leonardo DiCaprio", "Morgan Freeman", "Brad Pitt", "Denzel Washington", 
 "Johnny Depp", "Harrison Ford", "Tom Cruise", "Al Pacino", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", 
 "Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", 
 "Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis"];
 
+//gif Array
+var gifArray = ["https://media.giphy.com/media/3oeSAXCqOrDqoYlwqs/giphy.gif", "https://media.giphy.com/media/l3fZJroOW8RAafbc4/giphy.gif", "https://media.giphy.com/media/1455m6M8jFgCE8/giphy.gif", "https://media.giphy.com/media/IgsXOXGPxfT3O/giphy.gif", "https://media.giphy.com/media/fxgVuoKyZwEOudRXuj/giphy.gif", "https://media.giphy.com/media/3o85xyklT2t8VVjxxC/giphy.gif", "https://media.giphy.com/media/NWb5QtGBdfQyY/giphy.gif", "https://media.giphy.com/media/5WmyaeDDlmb1m/giphy.gif", "https://media.giphy.com/media/f6x9yOwdtxu1y/giphy.gif", "https://media.giphy.com/media/8NQ7T1ExRuMz6/giphy.gif"]
+
+//score
 var score = localStorage.getItem('score');
 if (score == null) {
     score = 0;
     localStorage.setItem('score', score);
+}
+
+//question number
+var qCount = localStorage.getItem('qCount');
+if (qCount == null) {
+    qCount = 1;
+    localStorage.setItem('qCount', qCount);
 }
 
 
@@ -125,15 +136,40 @@ answerChoices.addEventListener('click', function() {
 
     } else if (answerChoice.id === 'incorrect') {
         answerChoice.setAttribute('class', 'bg-red pure-menu-item pure-menu-link');
-        score--;
+        // score--;
         var localScore = localStorage.getItem('score');
         if (localScore == null) {
             localStorage.setItem('score', score);
             return;
         }
 
+        var qCount = localStorage.getItem('qCount')
+        var count = parseInt(qCount)
+        console.log(count)
+        if (count <= 4) {
+            count++
+            localStorage.setItem('qCount', count);
+        }
+        else {
+            setTimeout(function(){endGame()}, 2000);        }
+
+        var gifDisplay = document.querySelector("#gif")
+      
+        // Empty out the <div> before we append a GIF to it
+        gifDisplay.innerHTML = ""
+        
+        //random number
+        var number = Math.floor(Math.random() * Math.floor(gifArray.length));
+        
+        var gifImg = document.createElement("img");
+        gifImg.setAttribute("src", gifArray[number])
+       
+        // Append 'gifImg' to the <div>
+        gifDisplay.appendChild(gifImg)  
+
         // page reload
-        window.location.reload();
+        setTimeout(function(){window.location.reload();}, 3000);
+
     }
     localStorage.setItem('score', score);
     console.log(score);
@@ -169,6 +205,10 @@ var displayGif = function() {
       gifDisplay.appendChild(gifImg)     
   }) 
 
+}
+
+var endGame = function() {
+    // window.location.replace("git-it-right/highscores/highscores.html")
 }
 
 
