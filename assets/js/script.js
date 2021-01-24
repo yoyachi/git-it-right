@@ -35,7 +35,7 @@ if (highScoresArray == null) {
 
 // current location check
 var currentLocation = window.location.pathname;
-if (currentLocation === '/highscores/highscores.html') {
+if (currentLocation === '/git-it-right/highscores/highscores.html') {
 
     if (highScoresArray[0] == null) {
         console.log('empty');
@@ -43,6 +43,20 @@ if (currentLocation === '/highscores/highscores.html') {
         heading.textContent = 'There are no scores yet!';
         
     }  
+    else {
+        //sort scores
+        highScoresArray.sort((a, b) => (a.score < b.score) ? 1 : -1);
+
+        var scoresList = document.querySelector("#highscores");
+
+        //add scores to list
+        for (var i = 0; i < highScoresArray.length; i++) {
+            var displayScore = document.createElement("li");
+                displayScore.textContent = highScoresArray[i].username + " - " + highScoresArray[i].score;
+                displayScore.setAttribute("class", "pure-u pure-menu-item pure-menu-link");
+                scoresList.appendChild(displayScore);
+        }
+    }
 }
 
 // Get a random number to send into getMovieData
@@ -201,13 +215,6 @@ answerChoices.addEventListener('click', function() {
             endGame();
         }
             
-
-        
-      
-          
-
-
-        
 
     }
     localStorage.setItem('score', score);
