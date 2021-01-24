@@ -208,7 +208,7 @@ var displayGif = function() {
 }
 
 var endGame = function() {
-    // window.location.replace("git-it-right/highscores/highscores.html")
+    window.location.replace('../highscores/highscores.html')
 }
 
 
