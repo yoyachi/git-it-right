@@ -26,12 +26,18 @@ if (qCount == null) {
 }
 
 //high scores array
-var highScoresArray = localStorage.getItem('highscores');
+var highScoresArray = JSON.parse(localStorage.getItem('highscores'));
 if (highScoresArray == null) {
-    highScoresArray = 0;
-    localStorage.setItem('highscores', highScoresArray);
+    highScoresArray = [];
+    localStorage.setItem('highscores', JSON.stringify(highScoresArray));
 }
 
+
+// current location check
+var currentLocation = window.location.pathname;
+if (currentLocation === '/highscores/highscores.html') {
+    
+}
 
 // Get a random number to send into getMovieData
 var getRandomNumber = function() {
@@ -151,31 +157,51 @@ answerChoices.addEventListener('click', function() {
         }
 
         var qCount = localStorage.getItem('qCount')
-        var count = parseInt(qCount)
-        console.log(count)
+        var count = parseInt(qCount);
+        console.log(count);
         if (count <= 4) {
-            count++
+            count++;
             localStorage.setItem('qCount', count);
+            // Empty out the <div> before we append a GIF to it
+            var gifDisplay = document.querySelector("#gif");
+            gifDisplay.innerHTML = "";
+            
+            //random number
+            var number = Math.floor(Math.random() * Math.floor(gifArray.length));
+        
+            var gifImg = document.createElement("img");
+            gifImg.setAttribute("src", gifArray[number]);
+       
+            // Append 'gifImg' to the <div>
+            gifDisplay.appendChild(gifImg);
+
+            // page reload
+            setTimeout(function(){window.location.reload();}, 3000);
         }
         else {
-            setTimeout(function(){endGame()}, 2000);        }
-
-        var gifDisplay = document.querySelector("#gif")
-      
-        // Empty out the <div> before we append a GIF to it
-        gifDisplay.innerHTML = ""
+            var gifDisplay = document.querySelector("#gif");
+            // Empty out the <div> before we append a GIF to it
+            gifDisplay.innerHTML = "";
         
-        //random number
-        var number = Math.floor(Math.random() * Math.floor(gifArray.length));
+            //random number
+            var number = Math.floor(Math.random() * Math.floor(gifArray.length));
         
-        var gifImg = document.createElement("img");
-        gifImg.setAttribute("src", gifArray[number])
+            var gifImg = document.createElement("img");
+            gifImg.setAttribute("src", gifArray[number]);
        
-        // Append 'gifImg' to the <div>
-        gifDisplay.appendChild(gifImg)  
+            // Append 'gifImg' to the <div>
+            gifDisplay.appendChild(gifImg);
+            setTimeout(function(){console.log('end')}, 2000);
+            endGame();
+        }
+            
 
-        // page reload
-        setTimeout(function(){window.location.reload();}, 3000);
+        
+      
+          
+
+
+        
 
     }
     localStorage.setItem('score', score);
@@ -191,7 +217,7 @@ var displayGif = function() {
   var searchTermActor = event.target.textContent;
 
   // Make a `fetch` request concatenating that variable to the query URL
-  var apiUrl = "https://api.giphy.com/v1/gifs/search?q=" + searchTermMovie + " " + searchTermActor + "&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN"
+  var apiUrl = "https://api.giphy.com/v1/gifs/search?q=" + searchTermMovie + " " + searchTermActor + "&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN";
 
   fetch(apiUrl)
     .then(function(response) {
@@ -200,37 +226,38 @@ var displayGif = function() {
     .then(function(response) {
       console.log(response.data[0]);
       
-      var gifDisplay = document.querySelector("#gif")
+      var gifDisplay = document.querySelector("#gif");
       
       // Empty out the <div> before we append a GIF to it
-      gifDisplay.innerHTML = ""
+      gifDisplay.innerHTML = "";
       
       var gifImg = document.createElement('img');
       gifImg.setAttribute('src', response.data[0].images.fixed_height.url);
      
       // Append 'gifImg' to the <div>
-      gifDisplay.appendChild(gifImg)     
+      gifDisplay.appendChild(gifImg)  ;   
   }) 
 
 }
 
 var endGame = function() {
     
-    localStorage.setItem("qCount", 1)
+    localStorage.setItem("qCount", 1);
     highScores();
-    // window.location.replace('../highscores/highscores.html')
+    window.location.replace('../highscores/highscores.html');
 }
 
 var highScores = function() {
 
     
-    var storedScore = localStorage.getItem("score")
-    var storedName = localStorage.getItem("username")
+    var storedScore = localStorage.getItem("score");
+    var storedName = localStorage.getItem("username");
 
     var currentScore = {username: storedName, score: storedScore};
-        highscoresArray = localStorage.getItem("highscores");
-        highScoresArray.push(currentScore);
-        localStorage.setItem("highscores", highScoresArray);
+
+    console.log(currentScore);
+    highScoresArray.push(currentScore);
+    localStorage.setItem("highscores", JSON.stringify(highScoresArray));
 
     // var scoreEl = document.querySelector(".info")
 
@@ -244,6 +271,11 @@ var highScores = function() {
 
 }
 
+var currentLocation = window.location.pathname;
+console.log(currentLocation);
+if (currentLocation === 'highscores/highscores.html') {
+    console.log('hello');
+}
 
 getMovieData();
 
