@@ -96,7 +96,10 @@ var appendItems = function(data) {
     var listEl = document.createElement('li');
     listEl.setAttribute('class', 'pure-menu-item pure-menu-link');
     listEl.setAttribute('id', 'incorrect');
-    listEl.textContent = wrongActors[0];
+
+    //randomize wrongActor and append to page
+    var number = Math.floor(Math.random() * Math.floor(wrongActors.length))
+    listEl.textContent = wrongActors[number];
     var answerUl = document.querySelector('#answerChoices');
     answerUl.appendChild(listEl);
     getRandomNumber();
