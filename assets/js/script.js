@@ -45,6 +45,11 @@ if (currentLocation.includes('/highscores/highscores.html')) {
         
     }  
     else {
+
+        // heading display
+        var heading = document.querySelector('#highScoreHeading');
+        heading.textContent = "Highscores:";
+
         //sort scores
         highScoresArray.sort((a, b) => (a.score < b.score) ? 1 : -1);
 
@@ -274,6 +279,8 @@ var highScores = function() {
     console.log(currentScore);
     highScoresArray.push(currentScore);
     localStorage.setItem("highscores", JSON.stringify(highScoresArray));
+    score = 0;
+    localStorage.setItem('score', JSON.stringify(score));
 
     // var scoreEl = document.querySelector(".info")
 

@@ -78,11 +78,15 @@ body{
 .movie-name {
     text-decoration: underline;
 }
-#highscores{
-    display: flex;
-    flex-direction: column;
 
+/* High scores page */
+
+.d-flex {
+    display:flex;
+    flex-direction: column;
+    align-content: center;
 }
+
 
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
