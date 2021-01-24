@@ -208,7 +208,25 @@ var displayGif = function() {
 }
 
 var endGame = function() {
+    
+    localStorage.setItem("qCount", 0)
     window.location.replace('../highscores/highscores.html')
+}
+
+var highScores = function() {
+
+    var storedScore = localStorage.getItem("score")
+
+    var scoreEl = document.querySelector(".info")
+
+     // if there are no high scores tell user and display Go Back button
+     if (!storedScore) {
+        var displayScore = document.createElement("h3");
+            displayScore.setAttribute("class", "pure-u")
+            displayScore.textContent = "No scores yet...";
+            scoreEl.appendChild(displayScore);
+    }  
+
 }
 
 
