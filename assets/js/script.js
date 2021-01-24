@@ -153,74 +153,76 @@ var appendItems = function(data) {
 
 // click event
 var answerChoices = document.querySelector('#answerChoices');
-answerChoices.addEventListener('click', function() {
-    var answerChoice = event.target;
-    if (answerChoice.id === 'correct') {
-        answerChoice.setAttribute('class', 'bg-green pure-menu-item pure-menu-link');
-        score++;
-        var localScore = localStorage.getItem('score');
-        if (localScore == null) {
-            localStorage.setItem('score', score);
-            return;
-        }
-        answerChoice.setAttribute('id', '');
-        console.log(answerChoice);
+if (answerChoices !== null) {
+    answerChoices.addEventListener('click', function() {
+        var answerChoice = event.target;
+        if (answerChoice.id === 'correct') {
+            answerChoice.setAttribute('class', 'bg-green pure-menu-item pure-menu-link');
+            score++;
+            var localScore = localStorage.getItem('score');
+            if (localScore == null) {
+                localStorage.setItem('score', score);
+                return;
+            }
+            answerChoice.setAttribute('id', '');
+            console.log(answerChoice);
 
-        displayGif();
+            displayGif();
 
-    } else if (answerChoice.id === 'incorrect') {
-        answerChoice.setAttribute('class', 'bg-red pure-menu-item pure-menu-link');
-        // score--;
-        var localScore = localStorage.getItem('score');
-        if (localScore == null) {
-            localStorage.setItem('score', score);
-            return;
-        }
+        } else if (answerChoice.id === 'incorrect') {
+            answerChoice.setAttribute('class', 'bg-red pure-menu-item pure-menu-link');
+            // score--;
+            var localScore = localStorage.getItem('score');
+            if (localScore == null) {
+                localStorage.setItem('score', score);
+                return;
+            }
 
-        var qCount = localStorage.getItem('qCount')
-        var count = parseInt(qCount);
-        console.log(count);
-        if (count <= 4) {
-            count++;
-            localStorage.setItem('qCount', count);
-            // Empty out the <div> before we append a GIF to it
-            var gifDisplay = document.querySelector("#gif");
-            gifDisplay.innerHTML = "";
+            var qCount = localStorage.getItem('qCount')
+            var count = parseInt(qCount);
+            console.log(count);
+            if (count <= 4) {
+                count++;
+                localStorage.setItem('qCount', count);
+                // Empty out the <div> before we append a GIF to it
+                var gifDisplay = document.querySelector("#gif");
+                gifDisplay.innerHTML = "";
+                
+                //random number
+                var number = Math.floor(Math.random() * Math.floor(gifArray.length));
             
-            //random number
-            var number = Math.floor(Math.random() * Math.floor(gifArray.length));
+                var gifImg = document.createElement("img");
+                gifImg.setAttribute("src", gifArray[number]);
         
-            var gifImg = document.createElement("img");
-            gifImg.setAttribute("src", gifArray[number]);
-       
-            // Append 'gifImg' to the <div>
-            gifDisplay.appendChild(gifImg);
+                // Append 'gifImg' to the <div>
+                gifDisplay.appendChild(gifImg);
 
-            // page reload
-            setTimeout(function(){window.location.reload();}, 3000);
-        }
-        else {
-            var gifDisplay = document.querySelector("#gif");
-            // Empty out the <div> before we append a GIF to it
-            gifDisplay.innerHTML = "";
-        
-            //random number
-            var number = Math.floor(Math.random() * Math.floor(gifArray.length));
-        
-            var gifImg = document.createElement("img");
-            gifImg.setAttribute("src", gifArray[number]);
-       
-            // Append 'gifImg' to the <div>
-            gifDisplay.appendChild(gifImg);
-            setTimeout(function(){console.log('end')}, 2000);
-            endGame();
-        }
+                // page reload
+                setTimeout(function(){window.location.reload();}, 3000);
+            }
+            else {
+                var gifDisplay = document.querySelector("#gif");
+                // Empty out the <div> before we append a GIF to it
+                gifDisplay.innerHTML = "";
             
+                //random number
+                var number = Math.floor(Math.random() * Math.floor(gifArray.length));
+            
+                var gifImg = document.createElement("img");
+                gifImg.setAttribute("src", gifArray[number]);
+        
+                // Append 'gifImg' to the <div>
+                gifDisplay.appendChild(gifImg);
+                setTimeout(function(){console.log('end')}, 2000);
+                endGame();
+            }
+                
 
-    }
-    localStorage.setItem('score', score);
-    console.log(score);
-});
+        }
+        localStorage.setItem('score', score);
+        console.log(score);
+    });
+}
 
 var displayGif = function() {
 
@@ -290,7 +292,8 @@ console.log(currentLocation);
 if (currentLocation === 'highscores/highscores.html') {
     console.log('hello');
 }
-
-getMovieData();
+if (currentLocation.includes('/moviegame.html')) {
+    getMovieData();
+}
 
 
