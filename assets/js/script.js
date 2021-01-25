@@ -150,17 +150,26 @@ var appendItems = function(data) {
         // answerUl.appendChild(listEl);
         answerArray.push(listEl);
     }
+
     var listEl = document.createElement('li');
     listEl.setAttribute('class', 'pure-menu-item pure-menu-link');
     listEl.setAttribute('id', 'incorrect');
 
+    var listEl2 = document.createElement('li');
+    listEl2.setAttribute('class', 'pure-menu-item pure-menu-link');
+    listEl2.setAttribute('id', 'incorrect');
+
     //randomize wrongActor and append to page
-    var number = Math.floor(Math.random() * Math.floor(wrongActors.length))
+    var number = Math.floor(Math.random() * Math.floor(wrongActors.length));
+    var numberTwo = number++;
+    
     listEl.textContent = wrongActors[number];
+    listEl2.textContent = wrongActors[numberTwo];
     var answerUl = document.querySelector('#answerChoices');
     // answerUl.appendChild(listEl);
     getRandomNumber();
     answerArray.push(listEl);
+    answerArray.push(listEl2);
     shuffle(answerArray);
     console.log(answerArray);
 
