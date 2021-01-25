@@ -3,10 +3,7 @@ var movieNamesObj = ['Django Unchained', 'Once upon a time... in Hollywood', 'Bl
 'Jaws', 'Rocky', 'Back to the Future'];
 
 // incorrect answers
-var wrongActors = ["Tom Hanks", "Will Smith", "Leonardo DiCaprio", "Morgan Freeman", "Brad Pitt", "Denzel Washington", 
-"Johnny Depp", "Harrison Ford", "Tom Cruise", "Al Pacino", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", 
-"Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", 
-"Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis"];
+var wrongActors = ["Tom Hanks", "Will Smith", "Leonardo DiCaprio", "Morgan Freeman", "Brad Pitt", "Denzel Washington", "Johnny Depp", "Harrison Ford", "Tom Cruise", "Al Pacino", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", "Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", "Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis"];
 
 //gif Array
 var gifArray = ["https://media.giphy.com/media/3oeSAXCqOrDqoYlwqs/giphy.gif", "https://media.giphy.com/media/l3fZJroOW8RAafbc4/giphy.gif", "https://media.giphy.com/media/1455m6M8jFgCE8/giphy.gif", "https://media.giphy.com/media/IgsXOXGPxfT3O/giphy.gif", "https://media.giphy.com/media/fxgVuoKyZwEOudRXuj/giphy.gif", "https://media.giphy.com/media/3o85xyklT2t8VVjxxC/giphy.gif", "https://media.giphy.com/media/NWb5QtGBdfQyY/giphy.gif", "https://media.giphy.com/media/5WmyaeDDlmb1m/giphy.gif", "https://media.giphy.com/media/f6x9yOwdtxu1y/giphy.gif", "https://media.giphy.com/media/8NQ7T1ExRuMz6/giphy.gif"]
@@ -160,16 +157,33 @@ var appendItems = function(data) {
     listEl2.setAttribute('id', 'incorrect');
 
     //randomize wrong Actor and append to page
-    var number = Math.floor(Math.random() * Math.floor(wrongActors.length));
-    var numberTwo = number++;
-    
-    if (actors.includes(wrongActors[number])){
-        number++;
-        console.log(wrongActors[number] + "already exists");
-    } else if (actors.includes(wrongActors[numberTwo])){
-        numberTwo++;
-        console.log(wrongActors[numberTwo] + "already exists");
+    var numbers = getTwoRandomNumbers();
+    var number = numbers[0];
+    var numberTwo = numbers[1];
+    var checker = checkNumbers(number, numberTwo);
+    while (checker) {
+        numberTwo = Math.floor(Math.random() * Math.floor(wrongActors.length));
+        checker = checkNumbers(number, numberTwo);
     }
+     var checkActor = actorChecker(wrongActors[number], wrongActors[numberTwo], actors);
+     while (checkActor === 'actor1'){
+        number = Math.floor(Math.random() * Math.floor(wrongActors.length));
+        checker = checkNumbers(number, numberTwo);
+        while (checker) {
+            number = Math.floor(Math.random() * Math.floor(wrongActors.length));
+            checker = checkNumbers(number, numberTwo);
+        }
+        checkActor = actorChecker(wrongActors[number], wrongActors[numberTwo], actors);
+     }
+     while (checkActor === 'actor2') {
+        numberTwo = Math.floor(Math.random() * Math.floor(wrongActors.length));
+        checker = checkNumbers(number, numberTwo);
+        while (checker) {
+            numberTwo = Math.floor(Math.random() * Math.floor(wrongActors.length));
+            checker = checkNumbers(number, numberTwo);
+        }
+        checkActor = actorChecker(wrongActors[number], wrongActors[numberTwo], actors);
+     }
     
     listEl.textContent = wrongActors[number];
     listEl2.textContent = wrongActors[numberTwo];
@@ -370,3 +384,29 @@ function shuffle(array) {
     return array;
   }
 
+
+
+  var checkNumbers = function(num1, num2) {
+      if (num1 === num2) {
+          return true;
+      }
+      return false;
+  }
+
+  var actorChecker = function(actor1, actor2, arr) {
+      if (arr.includes(actor1)) {
+          console.log(actor1);
+        return 'actor1';
+      } else if (arr.includes(actor2)) {
+          console.log(actor2);
+        return 'actor2';
+      }
+      return false;
+  }
+
+  var getTwoRandomNumbers = function() {
+    var number = Math.floor(Math.random() * Math.floor(wrongActors.length));
+    var numberTwo = Math.floor(Math.random() * Math.floor(wrongActors.length));
+
+    return [number, numberTwo];
+  }
