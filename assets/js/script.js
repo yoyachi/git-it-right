@@ -159,15 +159,25 @@ var appendItems = function(data) {
     listEl2.setAttribute('class', 'pure-menu-item pure-menu-link');
     listEl2.setAttribute('id', 'incorrect');
 
-    //randomize wrongActor and append to page
+    //randomize wrong Actor and append to page
     var number = Math.floor(Math.random() * Math.floor(wrongActors.length));
     var numberTwo = number++;
+    
+    if (actors.includes(wrongActors[number])){
+        number++;
+        console.log('actor exists');
+    } else if (actors.includes(wrongActors[numberTwo])){
+        numberTwo++;
+        console.log('actor exists');
+    }
     
     listEl.textContent = wrongActors[number];
     listEl2.textContent = wrongActors[numberTwo];
     var answerUl = document.querySelector('#answerChoices');
     // answerUl.appendChild(listEl);
     getRandomNumber();
+
+    // push list items to array
     answerArray.push(listEl);
     answerArray.push(listEl2);
     shuffle(answerArray);
@@ -176,8 +186,6 @@ var appendItems = function(data) {
     for (i=0; i < answerArray.length; i++) {
         answerUl.appendChild(answerArray[i])
     }
-
-
 };
 
 
