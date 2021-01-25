@@ -272,8 +272,8 @@ var highScores = function() {
 
     
     var storedScore = localStorage.getItem("score");
-    var storedName = localStorage.getItem("username");
-
+    var storedName =JSON.parse(localStorage.getItem("username"));
+    
     var currentScore = {username: storedName, score: storedScore};
 
     console.log(currentScore);
