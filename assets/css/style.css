@@ -67,12 +67,29 @@ body{
     color: whitesmoke;
 }
 
+.justify-content-center {
+    justify-content: center;
+}
+
 .gif {
     justify-content: center;
 }
 
 .movie-name {
     text-decoration: underline;
+}
+
+/* High scores page */
+
+.d-flex {
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+/* next button, margin top */
+.mt-1 {
+    margin-top: 1%;
 }
 
 

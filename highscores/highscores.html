@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Movie Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
-    <link rel="stylesheet" href=".././assets/css/style.css">
+    
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css">
+    <link rel="stylesheet" href=".././assets/css/style.css">
 </head>
 <body>
+    <!--Head of page-->
     <div class="pure-menu pure-menu-horizontal">
         <ul class="pure-menu-list">
             <li class="pure-menu-item pure-menu-selected">
-                <a href="#" class="pure-menu-link">Highscores</a>
+                <a onclick="location.href=('../index.html')" class="pure-menu-link">The Movie Game!</a>
+                <i class="fa fa-film"></i>
             </li>
         </ul>
     </div>
+    <!--inner container for text display-->
     <div class="container">
-        <div class="pure-g info">
-            <h3 class="pure-u">These people know their movies!</h3>
+        <div class="pure-g info d-flex">
+            <h3 class="pure-u" id="highScoreHeading"></h3>
+            <ul class="pure-u pure-menu-list" id ="highscores"></ul>
+            <button class="pure-button mt-1" onclick="location.href=('../index.html')">Go Back</button>
         </div>
     </div>
+<script src="../assets/js/script.js"></script>
+
+
 </body>
 </html>
