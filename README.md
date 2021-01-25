@@ -5,7 +5,10 @@ The game also uses the giphy api to fetch gifs based on user input criteria (suc
 
 Highscores are saved to local storage and displayed!
 
-Deployed application can be found at drewvena.github.io/git-it-right
+LINK TO DEPLOYED APPLICATION:
+https://drewvena.github.io/git-it-right/
+
+LINK TO GITHUB REPOSITORY: https://github.com/drewvena/git-it-right
 
 ![Screenshot](./images/index.png)
 ![Screenshot](./images/game.png)
