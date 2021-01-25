@@ -221,7 +221,10 @@ if (answerChoices !== null) {
                 setTimeout(function(){console.log('end')}, 2000);
                 endGame();
             }
-                
+            var correctAnsChoice = document.querySelectorAll('#correct');
+            for (i=0; i < correctAnsChoice.length; i++) {
+                correctAnsChoice[i].setAttribute('id', '');
+            }
 
         }
         localStorage.setItem('score', score);
@@ -303,4 +306,15 @@ if (currentLocation.includes('/moviegame.html')) {
     getMovieData();
 }
 
+
+var nextQuestion = function () {
+    qCount++;
+    localStorage.setItem('qCount', qCount);
+
+    if (qCount <= 5) { 
+        location.reload();
+        return;
+    } 
+    endGame();
+}
 

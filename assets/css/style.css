@@ -87,6 +87,11 @@ body{
     align-content: center;
 }
 
+/* next button, margin top */
+.mt-1 {
+    margin-top: 1%;
+}
+
 
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
