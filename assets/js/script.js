@@ -130,6 +130,10 @@ var checkMovie = function(rando) {
 
 // append data to page
 var appendItems = function(data) {
+    
+    var answerUl = document.querySelector('#answerChoices');
+    answerArray = []
+
     // set movie title
     var movieName = data.Title;
     document.getElementById('movieName').textContent = movieName;
@@ -142,8 +146,9 @@ var appendItems = function(data) {
         listEl.setAttribute('class', 'pure-menu-item pure-menu-link');
         listEl.setAttribute('id', 'correct');
         listEl.textContent = actors[i];
-        var answerUl = document.querySelector('#answerChoices');
-        answerUl.appendChild(listEl);
+ 
+        // answerUl.appendChild(listEl);
+        answerArray.push(listEl);
     }
     var listEl = document.createElement('li');
     listEl.setAttribute('class', 'pure-menu-item pure-menu-link');
@@ -153,8 +158,17 @@ var appendItems = function(data) {
     var number = Math.floor(Math.random() * Math.floor(wrongActors.length))
     listEl.textContent = wrongActors[number];
     var answerUl = document.querySelector('#answerChoices');
-    answerUl.appendChild(listEl);
+    // answerUl.appendChild(listEl);
     getRandomNumber();
+    answerArray.push(listEl);
+    shuffle(answerArray);
+    console.log(answerArray);
+
+    for (i=0; i < answerArray.length; i++) {
+        answerUl.appendChild(answerArray[i])
+    }
+
+
 };
 
 
@@ -319,4 +333,23 @@ var nextQuestion = function () {
     } 
     endGame();
 }
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
 
