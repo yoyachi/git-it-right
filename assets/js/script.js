@@ -165,10 +165,10 @@ var appendItems = function(data) {
     
     if (actors.includes(wrongActors[number])){
         number++;
-        console.log('actor exists');
+        console.log(wrongActors[number] + "already exists");
     } else if (actors.includes(wrongActors[numberTwo])){
         numberTwo++;
-        console.log('actor exists');
+        console.log(wrongActors[numberTwo] + "already exists");
     }
     
     listEl.textContent = wrongActors[number];
