@@ -210,7 +210,7 @@ if (answerChoices !== null) {
         var answerChoice = event.target;
         if (answerChoice.id === 'correct') {
             answerChoice.setAttribute('class', 'bg-green pure-menu-item pure-menu-link');
-            playSound();
+            playSound(answerChoice);
             score++;
             var localScore = localStorage.getItem('score');
             if (localScore == null) {
@@ -224,6 +224,7 @@ if (answerChoices !== null) {
 
         } else if (answerChoice.id === 'incorrect') {
             answerChoice.setAttribute('class', 'bg-red pure-menu-item pure-menu-link');
+            playSound(answerChoice);
             // score--;
             var localScore = localStorage.getItem('score');
             if (localScore == null) {
@@ -412,11 +413,15 @@ var getTwoRandomNumbers = function() {
     return [number, numberTwo];
   }
 
-var playSound = function() {
+var playSound = function(answerChoice) {
     mySound = document.getElementById("sound");   
-    correctButton = document.getElementById("correct");   
-    mySound.play();
-    // correctButton.addEventListener("click", function(){ mySound.play(); });  
-    console.log("sound played");
-    console.log(mySound);
+    mySound2 = document.getElementById("sound2");  
+    correctButton = document.getElementById("correct");    
+    incorrectButton = document.getElementById("incorrect");  
+    if (answerChoice.id === "correct") {
+        mySound.play(); 
+    }
+    else if (answerChoice.id === "incorrect"){
+        mySound2.play();
+    }
 }
