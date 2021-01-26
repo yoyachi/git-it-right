@@ -1,12 +1,12 @@
 // Movie names
-var movieNamesObj = ['Django Unchained', 'Once upon a time... in Hollywood', 'Black Panther', 'Maze Runner', 'Deadpool', 'Crazy Rich Asians', 'A Star is Born', 'Bohemian Rhapsody', 
-'Jaws', 'Rocky', 'Back to the Future'];
+var movieNamesObj = ['Django Unchained', 'Once upon a time... in Hollywood', 'Pulp Fiction', 'Maze Runner', 'Deadpool', 'Crazy Rich Asians', 'A Star is Born', 'Bohemian Rhapsody', 
+'Jaws', 'Rocky', 'Back to the Future', 'The Notebook', 'V for Vendetta', 'Indiana Jones and the Raiders of the Lost Ark', 'Forgetting Sarah Marshall', 'Anchorman: The Legend of Ron Burgundy', 'Borat', 'Big','Tenet', 'The Dark Knight', 'Old School', 'Midsommar', 'Goodfellas', 'Casino', 'Black Mass'];
 
 // incorrect answers
-var wrongActors = ["Tom Hanks", "Will Smith", "Leonardo DiCaprio", "Morgan Freeman", "Brad Pitt", "Denzel Washington", "Johnny Depp", "Harrison Ford", "Tom Cruise", "Al Pacino", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", "Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", "Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis"];
+var wrongActors = ["Tom Hanks", "Will Smith", "Leonardo DiCaprio", "Morgan Freeman", "Brad Pitt", "Denzel Washington", "Johnny Depp", "Harrison Ford", "Tom Cruise", "Brody Cambert", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", "Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", "Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis","George Takei", "Sacha Baron Cohen", "Lisa Kudrow", "Tim Roth", "Maya Rudolph", "Dirk Benedict", "Paul Rudd", "Christoph Waltz", "Selma Blair", "Ruth Wilson","Elizabeth Hurley", "Channing Tatum", "Russel Crowe", "Russell Brand", "Jonah Hill"];
 
 //gif Array
-var gifArray = ["https://media.giphy.com/media/3oeSAXCqOrDqoYlwqs/giphy.gif", "https://media.giphy.com/media/l3fZJroOW8RAafbc4/giphy.gif", "https://media.giphy.com/media/1455m6M8jFgCE8/giphy.gif", "https://media.giphy.com/media/IgsXOXGPxfT3O/giphy.gif", "https://media.giphy.com/media/fxgVuoKyZwEOudRXuj/giphy.gif", "https://media.giphy.com/media/3o85xyklT2t8VVjxxC/giphy.gif", "https://media.giphy.com/media/NWb5QtGBdfQyY/giphy.gif", "https://media.giphy.com/media/5WmyaeDDlmb1m/giphy.gif", "https://media.giphy.com/media/f6x9yOwdtxu1y/giphy.gif", "https://media.giphy.com/media/8NQ7T1ExRuMz6/giphy.gif"]
+var gifArray = ["https://media.giphy.com/media/3oeSAXCqOrDqoYlwqs/giphy.gif", "https://media.giphy.com/media/l3fZJroOW8RAafbc4/giphy.gif", "https://media.giphy.com/media/1455m6M8jFgCE8/giphy.gif", "https://media.giphy.com/media/IgsXOXGPxfT3O/giphy.gif", "https://media.giphy.com/media/fxgVuoKyZwEOudRXuj/giphy.gif", "https://media.giphy.com/media/3o85xyklT2t8VVjxxC/giphy.gif", "https://media.giphy.com/media/NWb5QtGBdfQyY/giphy.gif", "https://media.giphy.com/media/5WmyaeDDlmb1m/giphy.gif", "https://media.giphy.com/media/f6x9yOwdtxu1y/giphy.gif", "https://media.giphy.com/media/8NQ7T1ExRuMz6/giphy.gif", 'https://media.giphy.com/media/WzN55eG5zQ9w8MPGZs/giphy.gif']
 
 //score
 var score = localStorage.getItem('score');
@@ -29,6 +29,11 @@ if (highScoresArray == null) {
     localStorage.setItem('highscores', JSON.stringify(highScoresArray));
 }
 
+//current score
+var scoreNum = document.getElementById("score-num");
+    if (scoreNum !== null){
+        scoreNum.textContent=score;
+    }
 
 // current location check
 var currentLocation = window.location.pathname;
@@ -43,13 +48,21 @@ if (currentLocation.includes('/highscores/highscores.html')) {
     }  
     else {
 
+        //display the Clear button
+        var clearBtnEl = document.getElementById("clearButton");
+            clearBtnEl.setAttribute("class", "pure-button mt-1");
+            clearBtnEl.addEventListener("click", function(){
+                localStorage.clear();
+                window.location.reload();
+            })
+
         // heading display
         var heading = document.querySelector('#highScoreHeading');
         heading.textContent = "Highscores:";
 
         //sort scores
         highScoresArray.sort(
-            (a, b) => (a.score < b.score) ? 1 : -1
+            (a, b) => (parseInt(a.score) < parseInt(b.score)) ? 1 : -1
             );
 
         var scoresList = document.querySelector("#highscores");
@@ -210,7 +223,9 @@ if (answerChoices !== null) {
         var answerChoice = event.target;
         if (answerChoice.id === 'correct') {
             answerChoice.setAttribute('class', 'bg-green pure-menu-item pure-menu-link');
+            playSound(answerChoice);
             score++;
+            scoreNum.textContent = score;
             var localScore = localStorage.getItem('score');
             if (localScore == null) {
                 localStorage.setItem('score', score);
@@ -223,7 +238,9 @@ if (answerChoices !== null) {
 
         } else if (answerChoice.id === 'incorrect') {
             answerChoice.setAttribute('class', 'bg-red pure-menu-item pure-menu-link');
-            // score--;
+            playSound(answerChoice);
+            score--;
+            scoreNum.textContent = score;
             var localScore = localStorage.getItem('score');
             if (localScore == null) {
                 localStorage.setItem('score', score);
@@ -322,26 +339,28 @@ var highScores = function() {
 
     
     var storedScore = localStorage.getItem("score");
-    var storedName =JSON.parse(localStorage.getItem("username"));
+    var storedName = JSON.parse(localStorage.getItem("username"));
+    
+    for (i=0; i<highScoresArray.length; i++) {
+        if (storedName === highScoresArray[i].username) {
+            
+            console.log(highScoresArray[i].score);
+            if (Number(storedScore) < Number(highScoresArray[i].score)) {
+                storedScore = highScoresArray[i].score;
+                
+            }
+            highScoresArray.splice(i, 1);
+        } 
+    }
+
+    
     
     var currentScore = {username: storedName, score: storedScore};
 
-    console.log(currentScore);
     highScoresArray.push(currentScore);
     localStorage.setItem("highscores", JSON.stringify(highScoresArray));
     score = 0;
     localStorage.setItem('score', JSON.stringify(score));
-
-    // var scoreEl = document.querySelector(".info")
-
-    //  // if there are no high scores tell user and display Go Back button
-    //  if (!storedScore) {
-    //     var displayScore = document.createElement("h3");
-    //         displayScore.setAttribute("class", "pure-u")
-    //         displayScore.textContent = "No scores yet...";
-    //         scoreEl.appendChild(displayScore);
-    // }  
-
 }
 
 var currentLocation = window.location.pathname;
@@ -404,9 +423,22 @@ function shuffle(array) {
       return false;
   }
 
-  var getTwoRandomNumbers = function() {
+var getTwoRandomNumbers = function() {
     var number = Math.floor(Math.random() * Math.floor(wrongActors.length));
     var numberTwo = Math.floor(Math.random() * Math.floor(wrongActors.length));
 
     return [number, numberTwo];
   }
+
+var playSound = function(answerChoice) {
+    mySound = document.getElementById("sound");   
+    mySound2 = document.getElementById("sound2");  
+    correctButton = document.getElementById("correct");    
+    incorrectButton = document.getElementById("incorrect");  
+    if (answerChoice.id === "correct") {
+        mySound.play(); 
+    }
+    else if (answerChoice.id === "incorrect"){
+        mySound2.play();
+    }
+}

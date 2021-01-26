@@ -92,7 +92,17 @@ body{
     margin-top: 1%;
 }
 
+/* hide */
+.hidden {
+    display: none;
+}
 
+#score {
+    text-align: right;
+    color: rgb(60, 223, 223);
+    opacity: 80%;
+    text-emphasis: none;
+}
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {

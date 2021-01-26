@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Movie Game</title>
+    <title>Cinequiz</title>
     <!--Linking Pure.CSS and local stylesheet-->
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
     <link rel="stylesheet" href=".././assets/css/style.css">
@@ -14,7 +14,7 @@
     <div class="pure-menu pure-menu-horizontal">
         <ul class="pure-menu-list">
             <li class="pure-menu-item pure-menu-selected">
-                <a href="#" class="pure-menu-link">The Movie Game!</a>
+                <a href="#" class="pure-menu-link">Cinequiz</a>
                 <i class="fa fa-film"></i> 
             </li>
         </ul>
@@ -22,6 +22,9 @@
     <div class="container">
         <div class="pure-g info text-center">
             <div class="pure-u-1 movie-name">
+                <p id="score">Score: 
+                    <span id="score-num"></span>
+                </p>
                 <h1 id="movieName"></h1>
             </div>
         </div>
@@ -41,6 +44,13 @@
     <div class="pure-g gif" id="gif">
         <!-- <img src="https://media4.giphy.com/media/1gRtl9mdLQvvvOfR9u/200.gif?cid=235416f5qln15v9s8sdw93yz7x37jbqt34qm091v35ougwhx&rid=200.gif" alt=""> -->
     </div>
+
+    <audio id="sound">   
+        <source src="correct.mp3"/>
+    </audio> 
+    <audio id="sound2">   
+        <source src="wrong.mp3"/>
+    </audio> 
 
 <script src=".././assets/js/script.js"></script>
 </body>
