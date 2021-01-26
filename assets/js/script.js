@@ -1,6 +1,6 @@
 // Movie names
 var movieNamesObj = ['Django Unchained', 'Once upon a time... in Hollywood', 'Pulp Fiction', 'Maze Runner', 'Deadpool', 'Crazy Rich Asians', 'A Star is Born', 'Bohemian Rhapsody', 
-'Jaws', 'Rocky', 'Back to the Future', 'The Notebook', 'V for Vendetta', 'Indiana Jones and the Raiders of the Lost Ark', 'Forgetting Sarah Marshall', 'Anchorman', 'Borat', 'Big','Tenet', 'The Dark Knight', 'Old School', 'Midsommar', 'Goodfellas', 'Casino', 'Black Mass'];
+'Jaws', 'Rocky', 'Back to the Future', 'The Notebook', 'V for Vendetta', 'Indiana Jones and the Raiders of the Lost Ark', 'Forgetting Sarah Marshall', 'Anchorman: The Legend of Ron Burgundy', 'Borat', 'Big','Tenet', 'The Dark Knight', 'Old School', 'Midsommar', 'Goodfellas', 'Casino', 'Black Mass'];
 
 // incorrect answers
 var wrongActors = ["Tom Hanks", "Will Smith", "Leonardo DiCaprio", "Morgan Freeman", "Brad Pitt", "Denzel Washington", "Johnny Depp", "Harrison Ford", "Tom Cruise", "Brody Cambert", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", "Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", "Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis","George Takei", "Sacha Baron Cohen", "Lisa Kudrow", "Tim Roth", "Maya Rudolph", "Dirk Benedict", "Paul Rudd", "Christoph Waltz", "Selma Blair", "Ruth Wilson","Elizabeth Hurley", "Channing Tatum", "Russel Crowe", "Russell Brand", "Jonah Hill"];
