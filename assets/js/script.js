@@ -339,26 +339,28 @@ var highScores = function() {
 
     
     var storedScore = localStorage.getItem("score");
-    var storedName =JSON.parse(localStorage.getItem("username"));
+    var storedName = JSON.parse(localStorage.getItem("username"));
+    
+    for (i=0; i<highScoresArray.length; i++) {
+        if (storedName === highScoresArray[i].username) {
+            
+            console.log(highScoresArray[i].score);
+            if (Number(storedScore) < Number(highScoresArray[i].score)) {
+                storedScore = highScoresArray[i].score;
+                
+            }
+            highScoresArray.splice(i, 1);
+        } 
+    }
+
+    
     
     var currentScore = {username: storedName, score: storedScore};
 
-    console.log(currentScore);
     highScoresArray.push(currentScore);
     localStorage.setItem("highscores", JSON.stringify(highScoresArray));
     score = 0;
     localStorage.setItem('score', JSON.stringify(score));
-
-    // var scoreEl = document.querySelector(".info")
-
-    //  // if there are no high scores tell user and display Go Back button
-    //  if (!storedScore) {
-    //     var displayScore = document.createElement("h3");
-    //         displayScore.setAttribute("class", "pure-u")
-    //         displayScore.textContent = "No scores yet...";
-    //         scoreEl.appendChild(displayScore);
-    // }  
-
 }
 
 var currentLocation = window.location.pathname;
