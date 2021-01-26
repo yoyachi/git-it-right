@@ -210,6 +210,7 @@ if (answerChoices !== null) {
         var answerChoice = event.target;
         if (answerChoice.id === 'correct') {
             answerChoice.setAttribute('class', 'bg-green pure-menu-item pure-menu-link');
+            playSound();
             score++;
             var localScore = localStorage.getItem('score');
             if (localScore == null) {
@@ -404,9 +405,18 @@ function shuffle(array) {
       return false;
   }
 
-  var getTwoRandomNumbers = function() {
+var getTwoRandomNumbers = function() {
     var number = Math.floor(Math.random() * Math.floor(wrongActors.length));
     var numberTwo = Math.floor(Math.random() * Math.floor(wrongActors.length));
 
     return [number, numberTwo];
   }
+
+var playSound = function() {
+    mySound = document.getElementById("sound");   
+    correctButton = document.getElementById("correct");   
+    mySound.play();
+    // correctButton.addEventListener("click", function(){ mySound.play(); });  
+    console.log("sound played");
+    console.log(mySound);
+}
