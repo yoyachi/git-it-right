@@ -57,7 +57,7 @@ if (currentLocation.includes('/highscores/highscores.html')) {
 
         //sort scores
         highScoresArray.sort(
-            (a, b) => (a.score < b.score) ? 1 : -1
+            (a, b) => (parseInt(a.score) < parseInt(b.score)) ? 1 : -1
             );
 
         var scoresList = document.querySelector("#highscores");
