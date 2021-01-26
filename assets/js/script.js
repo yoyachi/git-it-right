@@ -29,6 +29,11 @@ if (highScoresArray == null) {
     localStorage.setItem('highscores', JSON.stringify(highScoresArray));
 }
 
+//current score
+var scoreNum = document.getElementById("score-num");
+    if (scoreNum !== null){
+        scoreNum.textContent=score;
+    }
 
 // current location check
 var currentLocation = window.location.pathname;
@@ -220,6 +225,7 @@ if (answerChoices !== null) {
             answerChoice.setAttribute('class', 'bg-green pure-menu-item pure-menu-link');
             playSound(answerChoice);
             score++;
+            scoreNum.textContent = score;
             var localScore = localStorage.getItem('score');
             if (localScore == null) {
                 localStorage.setItem('score', score);
@@ -233,7 +239,8 @@ if (answerChoices !== null) {
         } else if (answerChoice.id === 'incorrect') {
             answerChoice.setAttribute('class', 'bg-red pure-menu-item pure-menu-link');
             playSound(answerChoice);
-            // score--;
+            score--;
+            scoreNum.textContent = score;
             var localScore = localStorage.getItem('score');
             if (localScore == null) {
                 localStorage.setItem('score', score);
