@@ -1,9 +1,9 @@
 // Movie names
-var movieNamesObj = ['Django Unchained', 'Once upon a time... in Hollywood', 'Black Panther', 'Maze Runner', 'Deadpool', 'Crazy Rich Asians', 'A Star is Born', 'Bohemian Rhapsody', 
-'Jaws', 'Rocky', 'Back to the Future'];
+var movieNamesObj = ['Django Unchained', 'Once upon a time... in Hollywood', 'Pulp Fiction', 'Maze Runner', 'Deadpool', 'Crazy Rich Asians', 'A Star is Born', 'Bohemian Rhapsody', 
+'Jaws', 'Rocky', 'Back to the Future', 'The Notebook', 'V for Vendetta', 'Indiana Jones and the Raiders of the Lost Ark', 'Forgetting Sarah Marshall', 'Anchorman', 'Borat', 'Big','Tenet', 'The Dark Knight', 'Old School', 'Midsommar', 'Goodfellas', 'Casino', 'Black Mass'];
 
 // incorrect answers
-var wrongActors = ["Tom Hanks", "Will Smith", "Leonardo DiCaprio", "Morgan Freeman", "Brad Pitt", "Denzel Washington", "Johnny Depp", "Harrison Ford", "Tom Cruise", "Al Pacino", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", "Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", "Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis"];
+var wrongActors = ["Tom Hanks", "Will Smith", "Leonardo DiCaprio", "Morgan Freeman", "Brad Pitt", "Denzel Washington", "Johnny Depp", "Harrison Ford", "Tom Cruise", "Brody Cambert", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", "Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", "Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis","George Takei", "Sacha Baron Cohen", "Lisa Kudrow", "Tim Roth", "Maya Rudolph", "Dirk Benedict", "Paul Rudd", "Christoph Waltz", "Selma Blair", "Ruth Wilson","Elizabeth Hurley", "Channing Tatum", "Russel Crowe", "Russell Brand", "Jonah Hill"];
 
 //gif Array
 var gifArray = ["https://media.giphy.com/media/3oeSAXCqOrDqoYlwqs/giphy.gif", "https://media.giphy.com/media/l3fZJroOW8RAafbc4/giphy.gif", "https://media.giphy.com/media/1455m6M8jFgCE8/giphy.gif", "https://media.giphy.com/media/IgsXOXGPxfT3O/giphy.gif", "https://media.giphy.com/media/fxgVuoKyZwEOudRXuj/giphy.gif", "https://media.giphy.com/media/3o85xyklT2t8VVjxxC/giphy.gif", "https://media.giphy.com/media/NWb5QtGBdfQyY/giphy.gif", "https://media.giphy.com/media/5WmyaeDDlmb1m/giphy.gif", "https://media.giphy.com/media/f6x9yOwdtxu1y/giphy.gif", "https://media.giphy.com/media/8NQ7T1ExRuMz6/giphy.gif"]
