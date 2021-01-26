@@ -92,6 +92,10 @@ body{
     margin-top: 1%;
 }
 
+/* hide */
+.hidden {
+    display: none;
+}
 
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */

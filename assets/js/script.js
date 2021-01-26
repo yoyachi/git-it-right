@@ -43,6 +43,14 @@ if (currentLocation.includes('/highscores/highscores.html')) {
     }  
     else {
 
+        //display the Clear button
+        var clearBtnEl = document.getElementById("clearButton");
+            clearBtnEl.setAttribute("class", "pure-button mt-1");
+            clearBtnEl.addEventListener("click", function(){
+                localStorage.clear();
+                window.location.reload();
+            })
+
         // heading display
         var heading = document.querySelector('#highScoreHeading');
         heading.textContent = "Highscores:";
