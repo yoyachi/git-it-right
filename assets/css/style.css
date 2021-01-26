@@ -106,6 +106,7 @@ body{
 }
 /*image on homescreen*/
 .img{
+    margin-bottom: 3%;
     border-radius:3%;
     border: 1px solid whitesmoke;
     max-width: 99%;
@@ -120,5 +121,7 @@ body{
     }
 
     
-
+.img {
+    max-height: 300px;
+}
 }
