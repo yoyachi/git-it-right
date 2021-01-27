@@ -1,6 +1,7 @@
 body{
     background-image: url("../.././images/cinema.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     
     /* this color displays while background image loads */
     background-color:#222020;
