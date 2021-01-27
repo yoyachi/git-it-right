@@ -259,6 +259,7 @@ if (answerChoices !== null) {
                 var number = Math.floor(Math.random() * Math.floor(gifArray.length));
             
                 var gifImg = document.createElement("img");
+                gifImg.setAttribute("class", "pure-img")
                 gifImg.setAttribute("src", gifArray[number]);
         
                 // Append 'gifImg' to the <div>
@@ -276,6 +277,7 @@ if (answerChoices !== null) {
                 var number = Math.floor(Math.random() * Math.floor(gifArray.length));
             
                 var gifImg = document.createElement("img");
+                gifImg.setAttribute("class", "pure-img")
                 gifImg.setAttribute("src", gifArray[number]);
         
                 // Append 'gifImg' to the <div>
