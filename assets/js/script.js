@@ -314,6 +314,7 @@ var displayGif = function() {
       gifDisplay.innerHTML = "";
       
       var gifImg = document.createElement('img');
+      gifImg.setAttribute("class", "pure-img")
       gifImg.setAttribute('src', response.data[0].images.fixed_height.url);
      
       // Append 'gifImg' to the <div>
