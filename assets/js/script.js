@@ -282,7 +282,7 @@ if (answerChoices !== null) {
         
                 // Append 'gifImg' to the <div>
                 gifDisplay.appendChild(gifImg);
-                setTimeout(function(){console.log('end')}, 2000);
+                setTimeout(function(){console.log('end')}, 3000);
                 endGame();
             }
             var correctAnsChoice = document.querySelectorAll('#correct');
