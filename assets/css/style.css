@@ -28,7 +28,7 @@ body{
 .container{
     margin: 4% 8%;
     border-radius: 2%;
-    background-color:rgb(87, 83, 83);
+    background-color: rgba(55, 14, 40, 0.899);
     padding: 2%;
     border: 1px solid whitesmoke;   
 }
@@ -92,8 +92,8 @@ body{
 }
 #score {
     text-align: right;
-    color: rgb(60, 223, 223);
-    opacity: 80%;
+    color: rgb(232, 201, 76);
+    opacity: 90%;
     text-emphasis: none;
 }
 .img{
