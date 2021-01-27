@@ -3,7 +3,7 @@ body{
 }
 .pure-menu{
     
-    background-color: rgb(60, 223, 223);
+    /* background-color: rgb(60, 223, 223); */
     opacity: 70%;
     text-align: center;
     font-weight: bold;
@@ -23,11 +23,12 @@ body{
     margin-left: 10%;
 }
 .container{
-    margin: 7% 10%;
+    margin: 4% 8%;
     border-radius: 2%;
     background-color:rgb(87, 83, 83);
     padding: 2%;
     border: 1px solid whitesmoke;
+    
 }
 .pure-u-1{
     padding: 2% 2%;
@@ -74,6 +75,7 @@ body{
 
 .gif {
     justify-content: center;
+    width:100%;
 }
 
 .movie-name {
@@ -110,6 +112,10 @@ body{
     border-radius:3%;
     border: 1px solid whitesmoke;
     max-width: 99%;
+}
+
+.header-img {
+    margin-bottom: 0;
 }
 
 
