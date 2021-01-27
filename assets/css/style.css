@@ -1,16 +1,19 @@
 body{
+    background-image: url("../.././images/cinema.jpg");
+    background-size: cover;
+    
+    /* this color displays while background image loads */
     background-color:#222020;
 }
 .pure-menu{
     
     /* background-color: rgb(60, 223, 223); */
-    opacity: 70%;
+    opacity: 100%;
     text-align: center;
     font-weight: bold;
     font-size: 100%;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 .info{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
@@ -27,8 +30,7 @@ body{
     border-radius: 2%;
     background-color:rgb(87, 83, 83);
     padding: 2%;
-    border: 1px solid whitesmoke;
-    
+    border: 1px solid whitesmoke;   
 }
 .pure-u-1{
     padding: 2% 2%;
@@ -48,76 +50,61 @@ body{
 .pure-menu-item:hover {
     color: black;
 }
-
 .bg-green {
     background-color: green;
     color: whitesmoke;
 }
-
 .bg-green:hover {
     background-color: green;
     color: whitesmoke;
 }
-
 .bg-red {
     background-color: red;
     color: whitesmoke;
 }
-
 .bg-red:hover {
     background-color: red;
     color: whitesmoke;
 }
-
 .justify-content-center {
     justify-content: center;
 }
-
 .gif {
     justify-content: center;
     width:100%;
 }
-
 .movie-name {
     text-decoration: underline;
 }
-
-/* High scores page */
 
 .d-flex {
     display:flex;
     flex-direction: column;
     align-content: center;
 }
-
-/* next button, margin top */
+/* margin top */
 .mt-1 {
     margin-top: 1%;
 }
-
 /* hide */
 .hidden {
     display: none;
 }
-
 #score {
     text-align: right;
     color: rgb(60, 223, 223);
     opacity: 80%;
     text-emphasis: none;
 }
-/*image on homescreen*/
 .img{
     margin-bottom: 3%;
     border-radius:3%;
     border: 1px solid whitesmoke;
     max-width: 99%;
 }
-
 .header-img {
     margin-bottom: 0;
 }
-
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
@@ -125,9 +112,8 @@ body{
     .container{
         border-radius: 5%;
     }
-
     
-.img {
-    max-height: 205px;
-}
+    .img {
+        max-height: 205px;
+    }
 }

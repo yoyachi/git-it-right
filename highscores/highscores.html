@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ciniquiz</title>
+    <!--Linking Pure.CSS and local stylesheet-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css">
     <link rel="stylesheet" href=".././assets/css/style.css">
 </head>
+
 <body>
-    <!--Head of page-->
-    <!-- <div class="pure-menu pure-menu-horizontal">
+
+    <!-- MARQUEE -->
+    <div class="pure-menu pure-menu-horizontal">
         <ul class="pure-menu-list">
-            <li class="pure-menu-item pure-menu-selected">
-                <a onclick="location.href=('../index.html')" class="pure-menu-link">Cinequiz</a>
-                <i class="fa fa-film"></i>
+            <li class="pure-menu-item pure-menu-selected"></li>
+                <a onClick= window.location.reload() href="#" id="cinequiz"><img class="img header-img" src='../images/cinequiz.JPG'></a>
+                <!-- <i class="fa fa-film"></i>  -->
             </li>
         </ul>
-    </div> -->
-    <!--inner container for text display-->
+        <!-- class="pure-menu-link" -->
+    </div>
+
+    <!--CONTAINER FOR SCORES-->
     <div class="container">
         <div class="pure-g info d-flex">
             <h3 class="pure-u" id="highScoreHeading"></h3>
@@ -30,8 +35,8 @@
             <button class="pure-button mt-1 hidden" id="clearButton">Clear High Scores</button>
         </div>
     </div>
-<script src="../assets/js/script.js"></script>
 
+    <script src="../assets/js/script.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,10 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
+    <!-- MARQUEE -->
+
     <div class="pure-menu pure-menu-horizontal">
         <ul class="pure-menu-list">
             <li class="pure-menu-item pure-menu-selected"></li>
@@ -20,18 +24,25 @@
         </ul>
         <!-- class="pure-menu-link" -->
     </div>
+
+    <!-- CONTAINER for quiz content -->
     <div class="container">
        
+        <!-- INSTRUCTIONS -->
+
         <div class="pure-g info">
-            <img class="img" src='./images/cinema.jpg'>
-            <div class="pure-u">You'll be given a movie name, along with 6 actors names. Out of the 6 names, 4 will be correct. Select the 4 correct actors for each question then click next. If a incorrect choice is clicked you will have 1 point deducted from your score and you will be automatically moved to the next question. Good Luck!</div>
-        
+            <!-- <img class="img" src='./images/cinema.jpg'> -->
+            <div class="pure-u">You'll be given a movie name, along with 6 actors. Out of the 6 names, 4 will be correct. Select up to 4 correct actors for each question to earn points. Then click next when you're ready. If an incorrect choice is selected you will have 1 point deducted from your score and you will be automatically moved to the next question. Good Luck!</div>
         </div>
+
+        <!-- INPUT -->
         <div class="pure-g name">
             <div class="pure-u-1">
                 <input type="text" id="multi-first-name" class="pure-u-3-4" placeholder="Enter Name" />
             </div>
         </div>
+
+        <!-- BUTTONS -->
         <div class="pure-g button">
                 <div class="pure-u-1">
                 <button class="pure-button mt-1" onclick = "changePage()">&nbsp;&nbsp&nbsp&nbspStart Game&nbsp&nbsp&nbsp&nbsp;</button>
@@ -39,11 +50,13 @@
                 <button class="pure-button mt-1" onclick = "location.href=('./highscores/highscores.html')">View Highscores</button>  
             </div>
         </div>
-    </div>
-    <div class="pure-g gif">
+
     </div>
 
+    <!-- EMPTY GIF CONTAINER -->
+    <div class="pure-g gif"></div>
 
+    <!-- SCRIPT FOR START GAME BUTTON -->
     <script>
         function changePage() {
             var username = document.querySelector('#multi-first-name');
@@ -52,7 +65,7 @@
             window.location.replace('./game/moviegame.html');
         }
     </script>
-<!-- <script src="./assets/js/script.js"></script> -->
 
+    <!-- <script src="./assets/js/script.js"></script> -->
 </body>
 </html>

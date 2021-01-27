@@ -40,11 +40,11 @@ var currentLocation = window.location.pathname;
 console.log(currentLocation);
 if (currentLocation.includes('/highscores/highscores.html')) {
 
+    // checks for high scores, if there are no highscores... else...
     if (highScoresArray[0] == null) {
         console.log('empty');
         var heading = document.querySelector('#highScoreHeading');
         heading.textContent = 'There are no scores yet!';
-        
     }  
     else {
 
@@ -129,9 +129,7 @@ var checkMovie = function(rando) {
             return;
         }
     }
-    // if number hasn't been used, all numbers have been used, and if the local
-    // storage already has values in it, add new number to arr and fetch the movie
-    // associated with that value
+    // if number hasn't been used, all numbers have been used, and if the local storage already has values in it, add new number to arr and fetch the movie associated with that value
     arr.push(rando);
     localStorage.setItem('randomNumbers', JSON.stringify(arr));
     fetchFun(rando);
@@ -298,13 +296,9 @@ if (answerChoices !== null) {
 
 var displayGif = function() {
 
-
-  // Create a variable that will use `document.querySelector()` to target the `id` of the input 
-  // Use `.value` to capture the value of the input and store it in the variable
   var searchTermMovie = document.getElementById("movieName").textContent;
   var searchTermActor = event.target.textContent;
 
-  // Make a `fetch` request concatenating that variable to the query URL
   var apiUrl = "https://api.giphy.com/v1/gifs/search?q=" + searchTermMovie + " " + searchTermActor + "&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN";
 
   fetch(apiUrl)
