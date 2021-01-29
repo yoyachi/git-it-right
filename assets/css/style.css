@@ -30,7 +30,8 @@ body{
     border-radius: 2%;
     background-color: rgba(55, 14, 40, 0.899);
     padding: 2%;
-    border: 1px solid whitesmoke;   
+    border: 1px solid whitesmoke;
+    box-shadow: 1px 1px 10px black;  
 }
 .pure-u-1{
     padding: 2% 2%;
@@ -104,6 +105,15 @@ body{
 }
 .header-img {
     margin-bottom: 0;
+    box-shadow: 1px 1px 10px black;
+}
+
+.gif-style {
+    border: 1px solid whitesmoke;
+    box-shadow: 1px 1px 10px black;
+    max-width: 100%;
+    margin-bottom: 1%;
+    margin-top: 1%;
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */

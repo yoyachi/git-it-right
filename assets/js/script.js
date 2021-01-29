@@ -309,18 +309,23 @@ var displayGif = function() {
     })
     .then(function(response) {
       console.log(response.data[0]);
+      if (response.data == undefined) {
+          console.log('NO GIF');
+      } else {
+        var gifDisplay = document.querySelector("#gif");
       
-      var gifDisplay = document.querySelector("#gif");
-      
-      // Empty out the <div> before we append a GIF to it
-      gifDisplay.innerHTML = "";
-      
-      var gifImg = document.createElement('img');
-      gifImg.setAttribute("class", "pure-img")
-      gifImg.setAttribute('src', response.data[0].images.fixed_height.url);
-     
-      // Append 'gifImg' to the <div>
-      gifDisplay.appendChild(gifImg)  ;   
+        // Empty out the <div> before we append a GIF to it
+        gifDisplay.innerHTML = "";
+        
+        var gifImg = document.createElement('img');
+        gifImg.setAttribute("class", "pure-img")
+        gifImg.setAttribute('src', response.data[0].images.fixed_height.url);
+        gifImg.setAttribute('class', 'gif-style');
+        
+        // Append 'gifImg' to the <div>
+        gifDisplay.appendChild(gifImg);
+      }
+         
   }) 
 
 }
