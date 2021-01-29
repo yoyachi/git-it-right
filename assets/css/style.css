@@ -4,6 +4,7 @@ body{
     
     /* this color displays while background image loads */
     background-color:#222020;
+
 }
 .pure-menu{
     
@@ -114,6 +115,10 @@ body{
     max-width: 100%;
     margin-bottom: 1%;
     margin-top: 1%;
+}
+
+.font-family {
+    font-family: 'Play', sans-serif !important;
 }
 
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
