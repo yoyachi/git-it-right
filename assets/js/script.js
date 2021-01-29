@@ -289,6 +289,10 @@ if (answerChoices !== null) {
             for (i=0; i < correctAnsChoice.length; i++) {
                 correctAnsChoice[i].setAttribute('id', '');
             }
+            var incorrectAnsChoice = document.querySelectorAll('#incorrect');
+            for (i=0; i < incorrectAnsChoice.length; i++) {
+                incorrectAnsChoice[i].setAttribute('id', '');
+            }
 
         }
         localStorage.setItem('score', score);
