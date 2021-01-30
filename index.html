@@ -15,25 +15,22 @@
 </head>
 
 <body>
-    <!-- MARQUEE -->
 
+    <!-- MARQUEE -->
     <div class="pure-menu pure-menu-horizontal">
         <ul class="pure-menu-list">
             <li class="pure-menu-item pure-menu-selected"></li>
+            <!-- HEADER LINK AND IMAGE -->
                 <a onClick= window.location.reload() href="#" id="cinequiz"><img class="img header-img" src='./images/cinequiz.JPG'></a>
-                <!-- <i class="fa fa-film"></i>  -->
             </li>
         </ul>
-        <!-- class="pure-menu-link" -->
     </div>
 
     <!-- CONTAINER for quiz content -->
     <div class="container">
        
         <!-- INSTRUCTIONS -->
-
         <div class="pure-g info">
-            <!-- <img class="img" src='./images/cinema.jpg'> -->
             <div class="pure-u font-family">You'll be given a movie name, along with 6 actors. Out of the 6 names, 4 will be correct. Select up to 4 correct actors for each question to earn points. Then click next when you're ready. If an incorrect choice is selected you will have 1 point deducted from your score and you will be automatically moved to the next question. Good Luck!</div>
         </div>
 
@@ -46,9 +43,11 @@
 
         <!-- BUTTONS -->
         <div class="pure-g button">
-                <div class="pure-u-1">
+            <div class="pure-u-1">
+                <!-- START GAME BUTTON -->
                 <button class="pure-button mt-1" onclick = "changePage()">&nbsp;&nbsp&nbsp&nbspStart Game&nbsp&nbsp&nbsp&nbsp;</button>
                 &nbsp;
+                <!-- HIGH SCORES PAGE BUTTON -->
                 <button class="pure-button mt-1" onclick = "location.href=('./highscores/highscores.html')">View Highscores</button>  
             </div>
         </div>
@@ -67,7 +66,5 @@
             window.location.replace('./game/moviegame.html');
         }
     </script>
-
-    <!-- <script src="./assets/js/script.js"></script> -->
 </body>
 </html>
