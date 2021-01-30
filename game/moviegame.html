@@ -10,6 +10,8 @@
     <link rel="stylesheet" href=".././assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/grids-responsive-min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap">
 </head>
 
 <body>
@@ -28,23 +30,23 @@
     <div class="container">
 
         <!-- MOVIE NAME and SCORE -->
-        <div class="pure-g info text-center">
-            <div class="pure-u-1 movie-name">
-                <p id="score">Score: 
+        <div class="pure-g color-white text-center">
+            <div class="pure-u-1 movie-name font-family">
+                <h2 id="score">Score: 
                     <span id="score-num"></span>
-                </p>
-                <h1 id="movieName"></h1>
+                </h2>
+                <h1 id="movieName" class="font-family"></h1>
             </div>
         </div>
 
-        
+
 
         <!-- ACTORS and BUTTONS -->
         <div class="pure-g">
             <div class="pure-u-1 text-center">
 
                 <!-- EMPTY LIST FOR ACTORS -->
-                <ul class="pure-menu-list" id="answerChoices">
+                <ul class="pure-menu-list font-family" id="answerChoices">
                     <!-- <li class="pure-menu-item pure-menu-link">Tom Cruise</li> -->
                 </ul>
                 <!-- EMPTY GIF CONTAINER -->
@@ -52,7 +54,7 @@
                 </div>
 
                 <!-- NEXT BUTTON -->
-                <button onclick="nextQuestion()" class="pure-button mt-1"> &nbsp&nbspNext&nbsp&nbsp</button>
+                <button onclick="nextQuestion()" class="pure-button mt-1 font-family"> &nbsp&nbspNext&nbsp&nbsp</button>
             </div>
         </div>
 

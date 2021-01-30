@@ -28,29 +28,37 @@
 
     <!-- CONTAINER for quiz content -->
     <div class="container">
-       
+       <!-- HOW TO PLAY HEADER -->
+       <h1 class='text-center color-white font-family'>
+           How to Play:
+       </h1>
         <!-- INSTRUCTIONS -->
         <div class="pure-g info">
-            <div class="pure-u font-family">You'll be given a movie name, along with 6 actors. Out of the 6 names, 4 will be correct. Select up to 4 correct actors for each question to earn points. Then click next when you're ready. If an incorrect choice is selected you will have 1 point deducted from your score and you will be automatically moved to the next question. Good Luck!</div>
+            <h2 class="pure-u font-family text-center">You'll be given a movie name, along with 6 actors. Out of the 6 names, 4 will be correct. Select up to 4 correct actors for each question to earn points. Then click next when you're ready. If an incorrect choice is selected you will have 1 point deducted from your score and you will be automatically moved to the next question. Good Luck!</h2>
         </div>
 
         <!-- INPUT -->
-        <div class="pure-g name">
+        <div class="pure-g text-center">
+            
             <div class="pure-u-1">
-                <input type="text" id="multi-first-name" class="pure-u-3-4" placeholder="Enter Name" />
+                <h2 class='color-white font-family'>
+                    Enter a username to keep track of your scores!
+                </h2>
+                <input type="text" id="multi-first-name" class="pure-u-3-4 font-family" placeholder="Enter Name" />
+                <!-- BUTTONS -->
+                <div class="pure-g">
+                    <div class="pure-u-1">
+                        <!-- START GAME BUTTON -->
+                        <button class="pure-button font-family" onclick = "changePage()">Start Game</button>
+                        
+                        <!-- HIGH SCORES PAGE BUTTON -->
+                        <button class="pure-button font-family" onclick = "location.href=('./highscores/highscores.html')">View Highscores</button>  
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- BUTTONS -->
-        <div class="pure-g button">
-            <div class="pure-u-1">
-                <!-- START GAME BUTTON -->
-                <button class="pure-button mt-1" onclick = "changePage()">&nbsp;&nbsp&nbsp&nbspStart Game&nbsp&nbsp&nbsp&nbsp;</button>
-                &nbsp;
-                <!-- HIGH SCORES PAGE BUTTON -->
-                <button class="pure-button mt-1" onclick = "location.href=('./highscores/highscores.html')">View Highscores</button>  
-            </div>
-        </div>
+        
 
     </div>
 

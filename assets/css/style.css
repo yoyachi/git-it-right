@@ -4,6 +4,7 @@ body{
     
     /* this color displays while background image loads */
     background-color:#222020;
+    text-align: center;
 
 }
 .pure-menu{
@@ -27,18 +28,20 @@ body{
     margin-left: 10%;
 }
 .container{
-    margin: 4% 8%;
+    margin: auto;
+    margin-top: 4%;
     border-radius: 2%;
     background-color: rgba(55, 14, 40, 0.899);
     padding: 2%;
     border: 1px solid whitesmoke;
     box-shadow: 1px 1px 10px black;  
+    max-width: 1024px;
 }
 .pure-u-1{
     padding: 2% 2%;
 }
 .name {
-    margin-left:10%;
+    margin-left: 10%;
 }
 .fa{
     padding: 3%;
@@ -121,6 +124,10 @@ body{
     font-family: 'Play', sans-serif !important;
 }
 
+.color-white {
+    color: whitesmoke;
+}
+
 /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
 @media screen and (max-width: 575px) {
     
@@ -130,5 +137,14 @@ body{
     
     .img {
         max-height: 205px;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1em;
+    }
+    .info {
+        padding: 1%;
     }
 }
