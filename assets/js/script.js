@@ -3,7 +3,7 @@ var movieNamesObj = ['Django Unchained', 'Once upon a time... in Hollywood', 'Pu
 'Jaws', 'Rocky', 'Back to the Future', 'The Notebook', 'V for Vendetta', 'Indiana Jones and the Raiders of the Lost Ark', 'Forgetting Sarah Marshall', 'Anchorman: The Legend of Ron Burgundy', 'Borat', 'Big','Tenet', 'The Dark Knight', 'Old School', 'Midsommar', 'Goodfellas', 'Casino', 'Black Mass'];
 
 // incorrect answers
-var wrongActors = ["Tom Hanks", "Will Smith", "Leonardo DiCaprio", "Morgan Freeman", "Brad Pitt", "Denzel Washington", "Johnny Depp", "Harrison Ford", "Tom Cruise", "Brody Cambert", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", "Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", "Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis","George Takei", "Sacha Baron Cohen", "Lisa Kudrow", "Tim Roth", "Maya Rudolph", "Dirk Benedict", "Jennifer Lawrence", "Christoph Waltz", "Selma Blair", "Ruth Wilson","Elizabeth Hurley", "Channing Tatum", "Russel Crowe", "Russell Brand", "Jonah Hill"];
+var wrongActors = ["Tom Hanks",  "Morgan Freeman", "Brad Pitt", "Denzel Washington", "Johnny Depp", "Harrison Ford", "Tom Cruise", "Brody Cambert", "Matt Damon", "Keanu Reeves", "Jack Nicholson", "Meryl Streep", "Natalie Portman", "Charlize Theron", "Emma Stone", "Viola Davis", "Brie Larson", "Octavia Spencer", "Amy Adams", "Drew Barrymore", "Jennifer Garner", "Sigourney Weaver", "Audrey Hepburn", "Betty Davis","George Takei", "Sacha Baron Cohen", "Lisa Kudrow", "Tim Roth", "Maya Rudolph", "Dirk Benedict", "Jennifer Lawrence", "Christoph Waltz", "Selma Blair", "Ruth Wilson","Elizabeth Hurley", "Channing Tatum", "Russel Crowe", "Russell Brand", "Jonah Hill", "Raymond Lopez", "Julissa Hash", "Drew Vena", "Cody Kimbell", "Steven Ly"];
 
 //gif Array
 var gifArray = ["https://media.giphy.com/media/3oeSAXCqOrDqoYlwqs/giphy.gif", "https://media.giphy.com/media/l3fZJroOW8RAafbc4/giphy.gif", "https://media.giphy.com/media/1455m6M8jFgCE8/giphy.gif", "https://media.giphy.com/media/IgsXOXGPxfT3O/giphy.gif", "https://media.giphy.com/media/fxgVuoKyZwEOudRXuj/giphy.gif", "https://media.giphy.com/media/3o85xyklT2t8VVjxxC/giphy.gif", "https://media.giphy.com/media/NWb5QtGBdfQyY/giphy.gif", "https://media.giphy.com/media/5WmyaeDDlmb1m/giphy.gif", "https://media.giphy.com/media/f6x9yOwdtxu1y/giphy.gif", "https://media.giphy.com/media/8NQ7T1ExRuMz6/giphy.gif", 'https://media.giphy.com/media/WzN55eG5zQ9w8MPGZs/giphy.gif']
@@ -231,19 +231,24 @@ var appendItems = function(data) {
     shuffle(answerArray);
     // APPEND THE ASNWER CHOICES TO THE UL iN THE HTML
     for (i=0; i < answerArray.length; i++) {
-        answerUl.appendChild(answerArray[i])
+        answerUl.appendChild(answerArray[i]);
     }
 };
 
 
 // GET THE ANSWER CHOICES
 var answerChoices = document.querySelector('#answerChoices');
+function scrollToElement($element) {
+    $element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+}
 // IF THE ANSWER CHOICE SELECTED HAS THE ID
 if (answerChoices !== null) {
     // IF THE ANSWER CHOICE IS CLICKED, RUN THIS CODE
-    answerChoices.addEventListener('click', function() {
+    answerChoices.addEventListener('click', function(event) {
         // SET THE LIST ELEMENT CLICKED TO A VARIABLE
         var answerChoice = event.target;
+        var gifImage = document.getElementById('nextBtn');
+        scrollToElement(gifImage);
         // CHECK IF THE ID OF THE LIST ELemeNT IS CORRECT
         if (answerChoice.id === 'correct') {
             // CHANGE THE CLASS OF THE ELEMENT TO ADD BG-GREEN
@@ -340,6 +345,7 @@ if (answerChoices !== null) {
         }
         // UPDATE SCORE IN LocAL STORAGE
         localStorage.setItem('score', score);
+        
     });
 }
 

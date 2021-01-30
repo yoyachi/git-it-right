@@ -5,7 +5,6 @@ body{
     /* this color displays while background image loads */
     background-color:#222020;
     text-align: center;
-
 }
 .pure-menu{
     
@@ -29,7 +28,7 @@ body{
 }
 .container{
     margin: auto;
-    margin-top: 4%;
+    margin-top: 1%;
     border-radius: 2%;
     background-color: rgba(55, 14, 40, 0.899);
     padding: 2%;
@@ -51,6 +50,9 @@ body{
 }
 .pure-menu-item {
     color: whitesmoke;
+    width: fit-content;
+    margin:auto;
+    margin-top: 1%;
 }
 .pure-menu-item:hover {
     color: black;
@@ -58,18 +60,30 @@ body{
 .bg-green {
     background-color: green;
     color: whitesmoke;
+    margin: auto;
+    width: fit-content;
+    border: 1px solid whitesmoke;
+    margin-top: 1%;
 }
 .bg-green:hover {
     background-color: green;
     color: whitesmoke;
+    margin: auto;
+    margin-top: 1%;
 }
 .bg-red {
     background-color: red;
     color: whitesmoke;
+    margin: auto;
+    width: fit-content;
+    border: 1px solid whitesmoke;
+    margin-top: 1%;
 }
 .bg-red:hover {
     background-color: red;
     color: whitesmoke;
+    margin: auto;
+    margin-top: 1%;
 }
 .justify-content-center {
     justify-content: center;
