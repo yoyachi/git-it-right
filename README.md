@@ -8,7 +8,7 @@ Highscores are saved to local storage and displayed!
 LINK TO DEPLOYED APPLICATION:
 https://drewvena.github.io/git-it-right/
 
-LINK TO GITHUB REPOSITORY: https://github.com/drewvena/git-it-right
+LINK TO GITHUB REPOSITORY: https://github.com/yoyachi/git-it-right
 
 ![Screenshot](./images/index.png)
 ![Screenshot](./images/game.png)
